@@ -3,25 +3,31 @@ var result = '';
 
 // Grab the headers
 $.each($('#listviewHeaderRow').children(), function(i) {
-  result += $($('#listviewHeaderRow').children()[i]).children().text().replace(/\n/g,'');
-  result += ',';
+    result += $($('#listviewHeaderRow').children()[i]).children().text().replace(/\n/g,'');
+    result += ',';
 });
 
 result += '\n';
 
-// Add the rows
-// First you'll loop through each row
-// Then you'll loop through each column in a row
+// Specify # of pages desired
+var pageNumbers = prompt("How many pages do you want to fetch?");
 
-$.each($('#lvTred').children(), function(i) {
-  // inside each row
-  $.each($($('#lvTred').children()[i]).children(), function(j) {
-    // inside each column
-    result += $($($('#lvTred').children()[i]).children()[j]).text().replace(/\n/g, '');
-    result += ',';
-  });
-  result += '\n';
-});
+for (var i in pageNumbers) {
+    // Add the rows
+    // First you'll loop through each row
+    // Then you'll loop through each column in a row
+
+    $.each($('#lvTred').children(), function(i) {
+      // inside each row
+      $.each($($('#lvTred').children()[i]).children(), function(j) {
+        // inside each column
+        result += $($($('#lvTred').children()[i]).children()[j]).text().replace(/\n/g, '');
+        result += ',';
+      });
+      result += '\n';
+    });
+    $('#advancedsearchArrowN').trigger('click');
+}
 
 // Load FileSaver.js to download the file
 /*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
