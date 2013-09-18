@@ -12,7 +12,7 @@ result += '\n';
 // Specify # of pages desired
 var pageNumbers = prompt("How many pages do you want to fetch?");
 
-for (var i in pageNumbers) {
+for (var i=0; i < pageNumbers; i++) {
     console.log(i);
     // Add the rows
     // First you'll loop through each row
@@ -27,7 +27,7 @@ for (var i in pageNumbers) {
       });
       result += '\n';
     });
-    $('#advancedsearchArrowN').trigger('click').delay( 3000 );
+    setTimeout(function () {document.getElementById("advancedsearchArrowN").click();}, i * 2000);
 }
 
 // Load FileSaver.js to download the file
