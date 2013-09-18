@@ -29,10 +29,11 @@ for (var i=0; i < pageNumbers; i++) {
         });
         document.getElementById("advancedsearchArrowN").click();
     }, i * 2000);
-    setTimeout(function () {
-        saveFile();
-    }, (pageNumbers * 2000) + 2000);
 }
+
+setTimeout(function () {
+    saveFile();
+}, (pageNumbers * 2000) + 2000);
 
 // Load FileSaver.js to download the file
 /*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
