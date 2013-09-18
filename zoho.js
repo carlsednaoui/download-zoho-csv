@@ -13,6 +13,7 @@ result += '\n';
 var pageNumbers = prompt("How many pages do you want to fetch?");
 
 for (var i in pageNumbers) {
+    console.log(i);
     // Add the rows
     // First you'll loop through each row
     // Then you'll loop through each column in a row
@@ -26,7 +27,7 @@ for (var i in pageNumbers) {
       });
       result += '\n';
     });
-    $('#advancedsearchArrowN').trigger('click');
+    $('#advancedsearchArrowN').trigger('click').delay( 3000 );
 }
 
 // Load FileSaver.js to download the file
