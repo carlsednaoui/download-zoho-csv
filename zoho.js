@@ -13,21 +13,20 @@ result += '\n';
 var pageNumbers = prompt("How many pages do you want to fetch?");
 
 for (var i=0; i < pageNumbers; i++) {
-    console.log(i);
     // Add the rows
     // First you'll loop through each row
     // Then you'll loop through each column in a row
 
-    $.each($('#lvTred').children(), function(i) {
-      // inside each row
-      $.each($($('#lvTred').children()[i]).children(), function(j) {
-        // inside each column
-        result += $($($('#lvTred').children()[i]).children()[j]).text().replace(/\n/g, '');
-        result += ',';
-      });
-      result += '\n';
-    });
     setTimeout(function () {
+        $.each($('#lvTred').children(), function(i) {
+          // inside each row
+          $.each($($('#lvTred').children()[i]).children(), function(j) {
+            // inside each column
+            result += $($($('#lvTred').children()[i]).children()[j]).text().replace(/\n/g, '');
+            result += ',';
+          });
+          result += '\n';
+        });
         document.getElementById("advancedsearchArrowN").click();
     }, i * 2000);
     setTimeout(function () {
