@@ -22,7 +22,7 @@ for (var i=0; i < pageNumbers; i++) {
           // inside each row
           $.each($($('#lvTred').children()[i]).children(), function(j) {
             // inside each column
-            result += $($($('#lvTred').children()[i]).children()[j]).text().replace(/\n/g, '');
+            result += $($($('#lvTred').children()[i]).children()[j]).text().replace(/\n/g, '').replace(/,/g, ';');
             result += ',';
           });
           result += '\n';
